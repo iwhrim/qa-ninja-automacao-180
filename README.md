@@ -1,0 +1,2 @@
+"# qa-ninja-automacao-180"  git init git add README.md git commit -m "first commit" git branch -M main git remote add origin https://github.com/iwhrim/qa-ninja-automacao-180.git git push -u origin main 
+"# qa-ninja-automacao-180" 
