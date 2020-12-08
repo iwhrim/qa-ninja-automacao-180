@@ -5,33 +5,26 @@ Funcionalidade: Cadastro
     Quero fazer o meu cadastro no RockLov
     Para que eu possa disponibilizá-los para locação
 
-    @temp
+    @cadastro
     Cenario: Fazer cadastro
-
         Dado que acesso a página de cadastro
-        Quando submeto o meu cadastro completo
+        Quando submeto o seguinte formulario de cadastro:
+            | nome      | email               | senha       |
+            | John Wick | john_wick@gmail.com | k1llth3m4ll |
         Então sou redirecionado para o Dashboard
 
-    Cenario: Submeter cadastro sem o nome
+    Esquema do Cenario: Tentativa de Cadastro
 
         Dado que acesso a página de cadastro
-        Quando submeto o meu cadastro sem o nome
-        Então vejo a mensagem de alerta: Oops. Informe seu nome completo!
+        Quando submeto o seguinte formulario de cadastro:
+            | nome         | email         | senha         |
+            | <nome_input> | <email_input> | <senha_input> |
+        Então vejo a mensagem de alerta: "<mensagem_input>"
 
-    Cenario: Submeter cadastro sem o email
-
-        Dado que acesso a página de cadastro
-        Quando submeto o meu cadastro sem o email
-        Então vejo a mensagem de alerta: Oops. Informe um email válido!
-
-    Cenario: Submeter cadastro com email incorreto
-
-        Dado que acesso a página de cadastro
-        Quando submeto o meu cadastro com incorreto
-        Então vejo a mensagem de alerta: Oops. Informe um email válido!
-
-    Cenario: Submeter cadastro sem a senha
-
-        Dado que acesso a página de cadastro
-        Quando submeto o meu cadastro sem a senha
-        Então vejo a mensagem de alerta: Oops. Informe sua senha secreta!
+        Exemplos:
+            | nome_input | email_input         | senha_input | mensagem_input                   |
+            |            | john_wick@gmail.com | k1llth3m4ll | Oops. Informe seu nome completo! |
+            | John Wick  |                     | k1llth3m4ll | Oops. Informe um email válido!   |
+            | John Wick  | john_wick$gmail.com | k1llth3m4ll | Oops. Informe um email válido!   |
+            | John Wick  | john_wick#gmail.com | k1llth3m4ll | Oops. Informe um email válido!   |
+            | John Wick  | john_wick@gmail.com |             | Oops. Informe sua senha secreta! |
