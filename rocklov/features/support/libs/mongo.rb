@@ -8,4 +8,19 @@ class MongoDB
         users = client[:users]
         users.delete_many({email: email})
     end
+
+    def get_user_id(email)
+        client = Mongo::Client.new('mongodb://rocklov-db:27017/rocklov')
+        users = client[:users]
+        user = users.find({email: email}).first
+        return user[:_id]
+    end
+
+    def remove_equipment(name, email)
+        user_id = get_user_id(email)
+        client = Mongo::Client.new('mongodb://rocklov-db:27017/rocklov')
+        equipments = client[:equipos]
+        equipments.delete_many({name: name, user: user_id})
+    end
+
 end

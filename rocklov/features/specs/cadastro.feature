@@ -22,9 +22,9 @@ Funcionalidade: Cadastro
         Então vejo a mensagem de alerta: "<mensagem_input>"
 
         Exemplos:
-            | nome_input | email_input         | senha_input | mensagem_input                   |
-            |            | john_wick@gmail.com | k1llth3m4ll | Oops. Informe seu nome completo! |
-            | John Wick  |                     | k1llth3m4ll | Oops. Informe um email válido!   |
-            | John Wick  | john_wick$gmail.com | k1llth3m4ll | Oops. Informe um email válido!   |
-            | John Wick  | john_wick#gmail.com | k1llth3m4ll | Oops. Informe um email válido!   |
-            | John Wick  | john_wick@gmail.com |             | Oops. Informe sua senha secreta! |
+            | nome_input | email_input      | senha_input | mensagem_input                   |
+            |            | hyperx@gmail.com | k1llth3m4ll | Oops. Informe seu nome completo! |
+            | John Wick  |                  | k1llth3m4ll | Oops. Informe um email válido!   |
+            | John Wick  | hyperx$gmail.com | k1llth3m4ll | Oops. Informe um email válido!   |
+            | John Wick  | hyperx#gmail.com | k1llth3m4ll | Oops. Informe um email válido!   |
+            | John Wick  | hyperx@gmail.com |             | Oops. Informe sua senha secreta! |
