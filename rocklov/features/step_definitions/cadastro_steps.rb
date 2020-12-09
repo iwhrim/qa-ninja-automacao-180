@@ -1,17 +1,11 @@
 Dado('que acesso a página de cadastro') do                                   
-  visit "/signup"
+  @signup_page.open
 end
 
-Quando('submeto o seguinte formulario de cadastro:') do |table|              
-  # table is a Cucumber::MultilineArgument::DataTable 
+Quando('submeto o seguinte formulario de cadastro:') do |table|
   user = table.hashes.first
 
   MongoDB.new.remove_user(user[:email])
+  @signup_page.create(user)
 
-  find("#fullName").set user[:nome]
-  find("#email").set user[:email]
-  find("#password").set user[:senha]
-
-  click_button "Cadastrar"
 end
-
