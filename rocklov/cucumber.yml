@@ -1,0 +1,5 @@
+---
+default: --publish-quiet -p allure -p dots
+dots: -f progress
+html: -f html -o logs/report.html
+allure: --format AllureCucumber::CucumberFormatter --out=logs
