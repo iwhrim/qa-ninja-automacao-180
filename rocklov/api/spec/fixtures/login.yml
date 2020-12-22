@@ -1,0 +1,35 @@
+---
+- title: senha incoreta
+  payload:
+    email: qaninja@gmail.com
+    password: inv_pwd
+  code: 401
+  error: Unauthorized
+- title: usuario nao existe
+  payload:
+    email: no_existe@gmail.com
+    password: inv_pwd
+  code: 401
+  error: Unauthorized
+- title: email em branco
+  payload:
+    email: ''
+    password: inv_pwd
+  code: 412
+  error: required email
+- title: sem o campo email
+  payload:
+    password: inv_pwd
+  code: 412
+  error: required email
+- title: senha em branco
+  payload:
+    email: qaninja@gmail.com
+    password: ''
+  code: 412
+  error: required password
+- title: sem o campo senha
+  payload:
+    email: qaninja@gmail.com
+  code: 412
+  error: required password

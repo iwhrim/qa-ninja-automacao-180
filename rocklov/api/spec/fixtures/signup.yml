@@ -1,0 +1,21 @@
+---
+- title: nome e obrigatorio
+  payload:
+    email: herobrine@bol.com.br
+    password: pwd123
+  code: 412
+  error: required name
+- title: email e obrigatorio
+  payload:
+    name: Herobrine
+    email:
+    password: pwd123
+  code: 412
+  error: required email
+- title: password e obrigatorio
+  payload:
+   name: Herobrine
+   email: herobrine@bol.com.br
+   password:
+  code: 412
+  error: required password
