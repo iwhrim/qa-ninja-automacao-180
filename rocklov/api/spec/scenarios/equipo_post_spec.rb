@@ -8,9 +8,7 @@ describe "POST /equipos" do
 
   context "novo equipo" do
     before(:all) do
-      thumbnail = File.open(File.join(Dir.pwd, "spec/fixtures/images", "kramer.jpg"), "rb")
-
-      payload = { thumbnail: thumbnail,
+      payload = { thumbnail: Helpers::get_thumb("kramer.jpg"),
                   name: "Kramer Eddie Van Halen",
                   category: "Cordas",
                   price: 299,
@@ -24,4 +22,21 @@ describe "POST /equipos" do
       expect(@result.code).to eql 200
     end
   end
+
+  context "nao autorizado" do
+    before(:all) do
+      payload = { thumbnail: Helpers::get_thumb("baixo.jpg"),
+                  name: "Contra baixo",
+                  category: "Cordas",
+                  price: 59,
+      }
+
+      @result = Equipos.new.create(payload, nil)
+    end
+
+    it 'should return 401' do
+      expect(@result.code).to eql 401
+    end
+  end
+
 end
