@@ -13,9 +13,11 @@ task :local_seeds do
 
   CONFIG = YAML.load_file(File.join(Dir.pwd, "features/support/config/local.yml"))
 
-
   users = [
     { name: "John Wick", email: "john_wick@gmail.com", password: to_md5("k1llth3m4ll") },
+    { name: "Tsunade", email: "tsunade@hotmail.com", password: to_md5("BiggerThanYours") },
+    { name: "Offin o Destruidor", email: "offin@bdo.com", password: to_md5("d3str0y3r") },
+    { name: "Kree Ara", email: "kree_ara@runescape.com", password: to_md5("gwd123") },
   ]
 
   MongoDB.new.drop_database

@@ -1,5 +1,5 @@
 ---
-default: --publish-quiet -p allure -p local -p dots -p chrome_headless
+default: --publish-quiet -p local -p chrome_headless
 dots: -f progress
 html: -f html -o logs/report.html
 allure: --format AllureCucumber::CucumberFormatter --out=logs
